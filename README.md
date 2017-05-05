@@ -39,6 +39,7 @@ If you are using ```dotfiles``` or ```brewfiles``` you need to configure first:
 export STRAP_GITHUB_USER=<yourGithubLogin>
 export STRAP_GITHUB_TOKEN=<YourPersonalAccessTokenWithPublicRepoScope>
 ```
+(If you're logged into github, you can create such a token here: https://github.com/settings/tokens , remember the ```public_repo``` scope)
  
 If you want to configure your git beforehand, you need to export these variables first:
 ```bash
