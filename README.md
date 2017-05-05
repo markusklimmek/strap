@@ -21,7 +21,11 @@ Strap is a script to bootstrap a minimal macOS development system. This does not
 - Mostly idempotent (the slow bit is rerunning `brew update`)
 
 ## Usage
+### Via heroku
+
 Open https://osx-strap.herokuapp.com in your web browser.
+
+### Via Console
 
 Alternatively, to run Strap locally run:
 ```bash
@@ -30,13 +34,25 @@ cd strap
 bash bin/strap.sh # or bash bin/strap.sh --debug for more debugging output
 ```
 
+If you are using ```dotfiles``` or ```brewfiles``` you need to configure first:
+```bash
+export STRAP_GITHUB_USER=<yourGithubLogin>
+export STRAP_GITHUB_TOKEN=<YourPersonalAccessTokenWithPublicRepoScope>
+```
+ 
+If you want to configure your git beforehand, you need to export these variables first:
+```bash
+export STRAP_GIT_USER="<Your Name>"
+export STRAP_GIT_EMAIL=<yourmail@company.com>
+```
+### Via web application (local)
 Alternatively, to run the web application locally run:
 ```bash
 git clone https://github.com/mikemcquaid/strap
 cd strap
 GITHUB_KEY="..." GITHUB_SECRET="..." ./script/server
 ```
-
+### Via web application (deployed to heroku) 
 Alternatively, to deploy to [Heroku](https://www.heroku.com) click:
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
