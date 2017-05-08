@@ -322,5 +322,15 @@ if [ -f "$HOME/.Brewfile" ]; then
   logk
 fi
 
+# Is zsh installed?
+BREW_LIST=`brew list`
+if [[ "$BREW_LIST" == *"zsh"* ]] ; then
+  # Is it running?
+  if [ -z "$ZSH_VERSION"]; then
+    log "We can check if zsh is not running, but installed""
+    # sudo -s "echo /usr/local/bin/zsh >> /etc/shells" && chsh -u markus -s /usr/local/bin/zsh"`
+  fi
+fi
+
 STRAP_SUCCESS="1"
 log "Your system is now Strap'd!"
